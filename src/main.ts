@@ -18,4 +18,15 @@ console.log(
   "background: linear-gradient(to right, rgba(38, 2, 33, 0.906) 47%, rgba(22, 0, 103, 1) 89%); color:#FFD933; font-size: 20px; padding: 10px;font-style:italic"
 );
 
-console.log(_.shuffle([1, 2, 3]));
+// Creating an array of random numbers for calling shuffle on
+
+const arr: number[] = [];
+for (let i = 0; i < 10; i++) {
+  arr.push(Math.trunc(Math.random() * 6) + 1);
+}
+console.log(arr);
+
+// Using Loops to write this to repear
+for (let i = 0; i < 10; i++) {
+  console.log(_.shuffle(arr));
+}
