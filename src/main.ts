@@ -2,6 +2,16 @@ import "./style.css";
 import _ from "lodash";
 import canvasConfetti from "canvas-confetti";
 
+// Create the banner function
+const LOG_STYLE =
+  "background: linear-gradient(to right, rgba(38, 2, 33, 0.906) 47%, rgba(22, 0, 103, 1) 89%); color:#FFD933; font-size: 20px; padding: 10px; font-style:italic";
+
+function logMessage(message: string): void {
+  console.log(`%c${message}`, LOG_STYLE);
+}
+
+////
+
 // This section displays pussies
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
@@ -42,3 +52,13 @@ console.log(arr);
 for (let i = 0; i < 10; i++) {
   console.log(_.shuffle(arr));
 }
+
+// 164
+
+logMessage(`Declare and Last Resort`);
+
+// declare -
+
+declare var GLOBALZ: any;
+
+console.log(GLOBALZ);
