@@ -7,6 +7,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
    <h1> Testing Imports  </h1>
    <h2> Lodash </h2>
   </div>
+  <button>Panty</button>
 `;
 
 ////////////////////////
