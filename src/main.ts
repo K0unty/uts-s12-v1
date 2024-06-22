@@ -2,10 +2,11 @@ import "./style.css";
 import canvasConfetti from "canvas-confetti";
 import _ from "lodash";
 import { Products } from "./product.model";
+import { validate } from "class-validator";
 
 // Using the class transformer
 import "reflect-metadata";
-import { plainToClass, plainToInstance } from "class-transformer";
+import { plainToInstance } from "class-transformer";
 
 // Create the banner function
 const LOG_STYLE =
@@ -84,3 +85,13 @@ for (const prod of loadedProducts) {
   console.log(prod.getInformation());
 }
 // Class- Transformer to
+
+const newProd = new Products("", -5.99);
+validate(newProd).then((err) => {
+  if (err.length > 0) {
+    console.log("VALIDATION ERRORS!");
+    console.log(err);
+  } else {
+    console.log(newProd.getInformation());
+  }
+});

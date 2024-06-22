@@ -1,8 +1,12 @@
 // 165: No Types needed : Class - Transformer
-import {} from "class-validator";
+import { IsNotEmpty, IsNumber, IsPositive } from "class-validator";
 
 export class Products {
+  @IsNotEmpty()
   title: string;
+
+  @IsNumber()
+  @IsPositive()
   price: number;
 
   constructor(t: string, p: number) {
