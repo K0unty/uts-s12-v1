@@ -1,5 +1,6 @@
 import "./style.css";
 import _ from "lodash";
+import canvasConfetti from "canvas-confetti";
 
 // This section displays pussies
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
@@ -7,10 +8,20 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
    <h1> Testing Imports  </h1>
    <h2> Lodash </h2>
   </div>
-  <button>Panty</button>
+  <button id="confetti-button">Panty</button>
 `;
 
 ////////////////////////
+const confettiButton = document.getElementById("confetti-button");
+if (confettiButton) {
+  confettiButton.addEventListener("click", () => {
+    canvasConfetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+  });
+}
 
 // This Seciton is the actual work
 
