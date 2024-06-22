@@ -1,10 +1,15 @@
 import "./style.css";
-import _ from "lodash";
 import canvasConfetti from "canvas-confetti";
+import _ from "lodash";
+import { Products } from "./product.model";
+
+// Using the class transformer
+import "reflect-metadata";
+import { plainToClass, plainToInstance } from "class-transformer";
 
 // Create the banner function
 const LOG_STYLE =
-  "background: linear-gradient(to right, rgba(38, 2, 33, 0.906) 47%, rgba(22, 0, 103, 1) 89%); color:#FFD933; font-size: 20px; padding: 10px; font-style:italic";
+  "background: linear-gradient(to right, rgba(38, 2, 33, 0.906) 47%, rgba(22, 0, 103, 1) 89%); color:#FFD933; font-size: 15px; padding: 10px; font-style:italic";
 
 function logMessage(message: string): void {
   console.log(`%c${message}`, LOG_STYLE);
@@ -60,4 +65,22 @@ logMessage(`Declare and Last Resort`);
 // declare -
 
 // 165
-console.log(`NoTypes Needed - Class Transformer`);
+logMessage(`NoTypes Needed - Class Transformer`);
+
+const products = [
+  { title: "ACarpet", price: 20.0 },
+  { title: "Abook", price: 10.0 },
+];
+// const p1 = new Products("A book", 12.99);
+
+// Manually converting the products array received , from an API Response
+// const loadedProducts = products.map((prod) => {
+//   return new Products(prod.title, prod.price);
+// });
+
+const loadedProducts = plainToInstance(Products, products);
+
+for (const prod of loadedProducts) {
+  console.log(prod.getInformation());
+}
+// Class- Transformer to
