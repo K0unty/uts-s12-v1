@@ -59,6 +59,5 @@ logMessage(`Declare and Last Resort`);
 
 // declare -
 
-declare var GLOBALZ: any;
-
-console.log(GLOBALZ);
+// 165
+console.log(`NoTypes Needed - Class Transformer`);
