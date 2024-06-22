@@ -1,4 +1,5 @@
 // 165: No Types needed : Class - Transformer
+import {} from "class-validator";
 
 export class Products {
   title: string;
